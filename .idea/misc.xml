@@ -5,18 +5,11 @@
       <map>
         <entry key="..\:/SocialMedia/app/src/main/res/drawable/bg_btn.xml" value="0.1645" />
         <entry key="..\:/SocialMedia/app/src/main/res/drawable/bg_edit_text.xml" value="0.1645" />
-        <entry key="..\:/SocialMedia/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/SocialMedia/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1645" />
+        <entry key="..\:/SocialMedia/app/src/main/res/drawable/ic_baseline_phone_24.xml" value="0.1645" />
+        <entry key="..\:/SocialMedia/app/src/main/res/layout/activity_login.xml" value="0.1859375" />
+        <entry key="..\:/SocialMedia/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/SocialMedia/app/src/main/res/layout/activity_sign_up.xml" value="0.1859375" />
-<<<<<<< HEAD
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/MediaSocial/app/src/main/res/layout/activity_login.xml" value="0.2515625" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/MediaSocial/app/src/main/res/layout/activity_main.xml" value="0.264" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/MediaSocial/app/src/main/res/layout/activity_sign_up.xml" value="0.2515625" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/MediaSocial/app/src/main/res/layout/activity_splash_screen.xml" value="0.16" />
-=======
-        <entry key="..\:/Users/Sabin ASSOGBA/SocialMedia/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
-        <entry key="..\:/Users/Sabin ASSOGBA/SocialMedia/app/src/main/res/drawable/b_login_field.xml" value="0.1" />
-        <entry key="..\:/Users/Sabin ASSOGBA/SocialMedia/app/src/main/res/layout/activity_login.xml" value="0.2" />
->>>>>>> 2e53e83f4a552e6624a851c9075aa55e585169ad
       </map>
     </option>
   </component>

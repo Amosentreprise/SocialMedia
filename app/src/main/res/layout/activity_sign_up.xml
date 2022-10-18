@@ -4,82 +4,93 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.SignUpActivity">
+    tools:context=".Activities.SignUpActivity"
+    android:id="@+id/layout"
+
+
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
 
     <EditText
         android:id="@+id/firstname_Edit"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginHorizontal="20dp"
         android:background="@drawable/bg_edit_text"
         android:drawableStart="@drawable/ic_baseline_person_24"
-        android:hint="         Your firstname"
+        android:hint="Your firstname"
+        android:drawablePadding="12dp"
         android:maxLines="1"
         android:paddingHorizontal="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="150dp"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:inputType="text"/>
+        app:layout_constraintTop_toTopOf="@+id/layout"
+        android:textSize="16sp"
+        android:inputType="text"
+        tools:ignore="MissingConstraints"
+        />
 
     <EditText
         android:id="@+id/lastname_Edit"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginHorizontal="20dp"
         android:background="@drawable/bg_edit_text"
         android:drawableStart="@drawable/ic_baseline_person_24"
-        android:hint="         Your lastname"
+        android:hint="Your lastname"
+        android:drawablePadding="12dp"
         android:maxLines="1"
         android:paddingHorizontal="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/firstname_Edit"
         android:layout_marginTop="30dp"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        android:textSize="16sp"
         android:inputType="text"/>
 
     <EditText
         android:id="@+id/phone_Edit"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginHorizontal="20dp"
         android:background="@drawable/bg_edit_text"
         android:drawableStart="@drawable/ic_baseline_phone_24"
-        android:hint="         Your phone"
+        android:hint="Your phone"
+        android:drawablePadding="12dp"
         android:maxLines="1"
         android:paddingHorizontal="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lastname_Edit"
         android:layout_marginTop="30dp"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        android:textSize="16sp"
         android:inputType="phone"/>
 
     <EditText
         android:id="@+id/password_Edit"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginHorizontal="20dp"
         android:background="@drawable/bg_edit_text"
-        android:hint="               Password"
+        android:hint="         Password"
+        android:paddingLeft="80dp"
         android:maxLines="1"
         android:paddingHorizontal="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/phone_Edit"
         android:layout_marginTop="30dp"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        android:textSize="16sp"
         android:inputType="textPassword"
         />
 
     <Button
         android:id="@+id/sign_up_btn"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/password_Edit"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,7 +99,11 @@
         android:background="@drawable/bg_btn"
         android:layout_marginTop="40dp"
         android:text="Sign up"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:elevation="5dp"/>
+
+
+</LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

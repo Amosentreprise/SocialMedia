@@ -12,23 +12,23 @@
        android:orientation="vertical">
 
        <ImageView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
+           android:layout_width="80dp"
+           android:layout_height="80dp"
            android:layout_gravity="center"
            android:layout_marginTop="80dp"
            android:background="@drawable/media" />
        <EditText
            android:layout_width="match_parent"
            android:layout_height="50dp"
-           android:layout_marginTop="50dp"
+           android:layout_marginTop="40dp"
            android:background="@drawable/b_login_field"
            android:layout_marginHorizontal="20dp"
-           android:hint="        Phone"
-           android:textSize="20sp"
+           android:hint="Phone"
+           android:drawablePadding="12dp"
+           android:textSize="16sp"
            android:paddingHorizontal="30dp"
-           android:textStyle="bold"
            android:drawableStart="@drawable/ic_baseline_phone_24"
-           android:inputType="number"/>
+           android:inputType="phone"/>
 
        <EditText
            android:layout_width="match_parent"
@@ -37,9 +37,10 @@
            android:paddingHorizontal="30dp"
            android:background="@drawable/b_login_field"
            android:layout_marginHorizontal="20dp"
-           android:hint="             Password"
-           android:textSize="20sp"
-           android:textStyle="bold"
+           android:hint="         Password"
+
+           android:paddingLeft="80dp"
+           android:textSize="16sp"
            android:inputType="textPassword"
            android:drawableEnd="@drawable/ic_baseline_remove_red_eye_24"
            />
@@ -48,9 +49,10 @@
            android:layout_height="wrap_content"
            android:layout_marginStart="100dp"
            android:layout_marginTop="20sp"
-           android:text="   Forget your password?"
-           android:textSize="20sp"
-           android:textStyle="bold"
+           android:text="Forget your password ?"
+           android:gravity="right"
+           android:paddingRight="15dp"
+           android:textSize="16sp"
            />
        <Button
            android:layout_width="match_parent"
@@ -60,19 +62,20 @@
            android:layout_marginEnd="20sp"
            android:background="@drawable/b_login_field"
            android:text="login"
-           android:textSize="20sp"
+           android:textSize="16sp"
            android:elevation="6dp"
           />
        <TextView
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-            android:layout_marginStart="200dp"
+           android:layout_gravity="center"
            android:text="ou"
            android:padding="5dp"
-           android:textSize="20sp"
+           android:textSize="16sp"
 
            />
        <Button
+           android:id="@+id/sign_up_btn_login"
            android:layout_width="match_parent"
            android:layout_height="50dp"
            android:layout_marginTop="10dp"
@@ -80,7 +83,7 @@
            android:layout_marginEnd="20sp"
            android:background="@drawable/b_login_field"
            android:text="Sign up"
-           android:textSize="20sp"
+           android:textSize="16sp"
            android:elevation="6dp"/>
 
 
