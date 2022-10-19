@@ -5,8 +5,10 @@
       <map>
         <entry key="..\:/SocialMedia/app/src/main/res/drawable/bg_btn.xml" value="0.1645" />
         <entry key="..\:/SocialMedia/app/src/main/res/drawable/bg_edit_text.xml" value="0.1645" />
+        <entry key="..\:/SocialMedia/app/src/main/res/drawable/ic_baseline_https_24.xml" value="0.1645" />
         <entry key="..\:/SocialMedia/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1645" />
         <entry key="..\:/SocialMedia/app/src/main/res/drawable/ic_baseline_phone_24.xml" value="0.1645" />
+        <entry key="..\:/SocialMedia/app/src/main/res/layout/activity_fonctionnality.xml" value="0.2" />
         <entry key="..\:/SocialMedia/app/src/main/res/layout/activity_login.xml" value="0.1859375" />
         <entry key="..\:/SocialMedia/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/SocialMedia/app/src/main/res/layout/activity_sign_up.xml" value="0.1859375" />
