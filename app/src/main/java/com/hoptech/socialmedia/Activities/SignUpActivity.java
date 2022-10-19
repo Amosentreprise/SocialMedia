@@ -50,11 +50,85 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //onBackPressed();
-                Intent directionLogin = new Intent(getApplicationContext(),LoginActivity.class);
-                startActivity(directionLogin);
-               finish();
+                if(validate()){
+                    Intent directionLogin = new Intent(getApplicationContext(),LoginActivity.class);
+                    startActivity(directionLogin);
+                    finish();
+                }else{
+
+                }
+
 
             }
         });
     }
+
+    //validation des données
+    private boolean validateFirstname(){
+        String value = firstname_Edit.getText().toString().trim();
+
+        if(value.isEmpty()){
+            firstname_Edit.setError("firstname field is empty");
+            return false;
+        }else if(value.length() <= 2){
+            firstname_Edit.setError("your firstname is incorrect ");
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+    private boolean validateLastname(){
+        String value = lastname_Edit.getText().toString().trim();
+
+        if(value.isEmpty()){
+            lastname_Edit.setError("lastname field is empty");
+            return false;
+        }else if(value.length() <= 2){
+            lastname_Edit.setError("your lastname is incorrect ");
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+    private boolean validatePhone(){
+        String value = phone_Edit.getText().toString().trim();
+
+        if(value.isEmpty()){
+            phone_Edit.setError("phone field is empty");
+            return false;
+        }else if(value.length() < 8){
+            phone_Edit.setError("your phone number is too low");
+            return false;
+        } else if(value.length() > 14){
+        phone_Edit.setError("your phone depassed the limit");
+        return false;
+    }else{
+            return true;
+        }
+    }
+
+    private boolean validatePassword(){
+        String value = password_Edit.getText().toString().trim();
+
+        if(value.isEmpty()){
+            password_Edit.setError("password field is empty");
+            return false;
+        }else if(value.length() < 8){
+            password_Edit.setError("your must depassed 8 characters");
+            return false;
+        }else{
+            return true;
+        }
+    }
+    //validation all
+    private boolean validate(){
+        if(validateFirstname() && validateLastname() && validatePhone() && validatePassword()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
+
