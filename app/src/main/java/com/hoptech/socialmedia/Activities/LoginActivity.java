@@ -76,10 +76,49 @@ public class LoginActivity extends AppCompatActivity {
         btn_Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent directionFonctionnality = new Intent(getApplicationContext(),FonctionnalityActivity.class );
-                startActivity(directionFonctionnality);
-                finish();
+                if(validatePhone()&& validatepassword()){
+                    Intent directionFonctionnality = new Intent(getApplicationContext(),FonctionnalityActivity.class );
+                    startActivity(directionFonctionnality);
+                    finish();
+                }else{
+
+                }
+
             }
-        });
+        });  
+    }
+    private Boolean validatePhone(){
+          String phoneNumber= phone_Login.getEditableText().toString();
+
+          if (phoneNumber.isEmpty()){
+              phone_Login.setError("Phone number can't be empty");
+              return false;
+          } else if( phoneNumber.length()< 8 ){
+              phone_Login.setError("Phone number is too low");
+              return false;
+          }
+          else if(phoneNumber.length()>14){
+              phone_Login.setError("Phone depassed limit");
+              return false;
+          }
+          else {
+               phone_Login.setError(null);
+               return true;
+          }
+    }
+    private Boolean validatepassword(){
+        String password = password_Login.getEditableText().toString();
+
+        if ( password.isEmpty()){
+            password_Login.setError("Password can't be empty");
+            return false;
+        }  else if(password.length()<8){
+            password_Login.setError("Password must depass 8 chars");
+            return false;
+        }
+        else{
+            password_Login.setError(null);
+            return true;
+        }
     }
 }
