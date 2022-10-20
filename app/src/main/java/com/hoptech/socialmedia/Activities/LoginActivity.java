@@ -9,10 +9,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.hoptech.socialmedia.Models.SqliteDataBase;
 import com.hoptech.socialmedia.R;
 
 public class LoginActivity extends AppCompatActivity {
+    SqliteDataBase myDb;
     private Button SignupButton, btn_Login;
     private EditText phone_Login, password_Login;
     private TextView forgetPassword, text_or;
@@ -29,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
         this.text_or = findViewById(R.id.or);
         this.btn_Login = findViewById(R.id.btn_Login);
         this.logo_Login = findViewById(R.id.logo_Login);
-
+        myDb = new SqliteDataBase(this);
         SignupButton.setTranslationX(800);
         SignupButton.setAlpha(OPACITY);
 
@@ -77,15 +80,21 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(validatePhone()&& validatepassword()){
-                    Intent directionFonctionnality = new Intent(getApplicationContext(),FonctionnalityActivity.class );
-                    startActivity(directionFonctionnality);
-                    finish();
+                    Boolean checkPhonenumberPass= myDb.checkphonenuberpass(phone_Login.getText().toString(), password_Login.getText().toString());
+                    if (checkPhonenumberPass){
+                        Intent directionFonctionnality = new Intent(getApplicationContext(),FonctionnalityActivity.class );
+                        startActivity(directionFonctionnality);
+                        finish();
+                    }else{
+                        Toast.makeText(LoginActivity.this,"Identifiants or password incorrect", Toast.LENGTH_LONG).show();
+                    }
+
                 }else{
 
                 }
 
             }
-        });  
+        });
     }
     private Boolean validatePhone(){
           String phoneNumber= phone_Login.getEditableText().toString();

@@ -7,10 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.hoptech.socialmedia.Models.SqliteDataBase;
 import com.hoptech.socialmedia.R;
 
 public class SignUpActivity extends AppCompatActivity {
+      SqliteDataBase myDb;
      private Button SignupButtonlogin;
      private EditText firstname_Edit, lastname_Edit, phone_Edit, password_Edit;
      private final int OPACITY = 0;
@@ -23,6 +26,8 @@ public class SignUpActivity extends AppCompatActivity {
         this.lastname_Edit = findViewById(R.id.lastname_Edit);
         this.phone_Edit = findViewById(R.id.phone_Edit);
         this.password_Edit = findViewById(R.id.password_Edit);
+        //connexion  avec la base de données
+        myDb = new SqliteDataBase(this);
         //annimation
         firstname_Edit.setTranslationX(800);
         firstname_Edit.setAlpha(OPACITY);
@@ -51,10 +56,21 @@ public class SignUpActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //onBackPressed();
                 if(validate()){
-                    Intent directionLogin = new Intent(getApplicationContext(),LoginActivity.class);
-                    startActivity(directionLogin);
-                    finish();
-                }else{
+                    //insertion des valeurs dans la base de données
+                    Boolean isInserted= myDb.insertData(firstname_Edit.getText().toString(),lastname_Edit.getText().toString(),
+                            phone_Edit.getText().toString(),password_Edit.getText().toString());
+
+                    //verification
+                    if (isInserted == true){
+                        Toast.makeText(SignUpActivity.this,"Account created succefully",Toast.LENGTH_LONG).show();
+                        Intent directionLogin = new Intent(getApplicationContext(),LoginActivity.class);
+                        startActivity(directionLogin);
+                        finish();
+
+                    }else{
+                        Toast.makeText(SignUpActivity.this,"Please retry",Toast.LENGTH_LONG).show();
+
+                    }
 
                 }
 
