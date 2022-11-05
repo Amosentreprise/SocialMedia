@@ -1,16 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragment.ProfilFragment"
-    android:background="@color/blue">
+    android:background="@color/grey"
+    >
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="ProfileFragment" />
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/profils"
+            android:layout_marginTop="110dp"
+            android:layout_gravity="center"
+            app:civ_border_color="#ffffff"
+            app:civ_border_width="2dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nom"
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="40dp"
+            android:drawableStart="@drawable/ic_baseline_person_24"
+            android:drawablePadding="15dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prenom"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="40dp"
+            android:drawableStart="@drawable/ic_baseline_person_24"
+            android:drawablePadding="15dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="40dp"
+            android:textColor="#000"
+            android:text="51515151"
+            android:textSize="20sp"
+            android:drawableStart="@drawable/ic_baseline_phone_24"
+            android:drawableTint="#000"
+            android:drawablePadding="15dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/bg_edit_text"
+            android:drawableEnd="@drawable/ic_baseline_image_24"
+            android:text="Changer ma photo"
+
+            />
+
+    </LinearLayout>
+
 
 </FrameLayout>

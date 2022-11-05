@@ -6,4 +6,78 @@
     android:layout_height="match_parent"
     tools:context=".Activities.PostActivity">
 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <ImageButton
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+       android:paddingTop="20dp"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        android:background="@android:color/transparent"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Créer un post"
+        android:textSize="20sp"
+        android:layout_marginLeft="60sp"
+        android:layout_marginTop="-30dp"
+        android:textColor="#000"
+
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/background_post_edit"
+        android:shadowDy="10"
+        android:hint="Writing...."
+        android:inputType="text"
+        android:paddingLeft="20dp"
+        android:textSize="20dp"
+        android:elevation="10dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginHorizontal="15dp"
+        />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/background_post_edit"
+        android:shadowDy="10"
+        android:elevation="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="15dp"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/background_post_edit"
+        android:shadowDy="10"
+        android:elevation="10dp"
+        android:text="Ajouter image / video"
+        android:textAllCaps="false"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="15dp"
+        android:textSize="20sp"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/background_post_edit"
+        android:shadowDy="10"
+        android:elevation="10dp"
+        android:text="Publier"
+        android:textAllCaps="false"
+        android:layout_marginTop="30dp"
+        android:textSize="20sp"
+        android:layout_marginHorizontal="15dp"
+        />
+
+
+</LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

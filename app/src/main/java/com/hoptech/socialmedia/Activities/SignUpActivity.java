@@ -143,6 +143,7 @@ public class SignUpActivity extends AppCompatActivity {
         if(validateFirstname() && validateLastname() && validatePhone() && validatePassword()){
             return true;
         }else{
+
             return false;
         }
     }
