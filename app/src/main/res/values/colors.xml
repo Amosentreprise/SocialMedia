@@ -3,5 +3,7 @@
     <color name="blue">#00BBFF</color>
     <color name="white">#FFFFFF</color>
     <color name="grey">#ECF0F3</color>
+    <color name="fluide">#f8f8f8</color>
+    <color name="black">#000000</color>
 
 </resources>
