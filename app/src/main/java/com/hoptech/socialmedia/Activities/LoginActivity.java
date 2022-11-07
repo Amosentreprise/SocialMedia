@@ -82,7 +82,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(validatePhone()&& validatepassword()){
                     Boolean checkPhonenumberPass= myDb.checkphonenuberpass(phone_Login.getText().toString(), password_Login.getText().toString());
                     if (checkPhonenumberPass){
-                        Intent directionFonctionnality = new Intent(getApplicationContext(),FonctionnalityActivity.class );
+                         Intent directionFonctionnality = new Intent(getApplicationContext(),FonctionnalityActivity.class );
                         startActivity(directionFonctionnality);
                         finish();
                     }else{

@@ -3,45 +3,30 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/SocialMedia/app/src/main/res/drawable/b_fragment_setting.xml" value="0.1645" />
-        <entry key="..\:/SocialMedia/app/src/main/res/drawable/background_post_edit.xml" value="0.1645" />
         <entry key="..\:/SocialMedia/app/src/main/res/drawable/bg_btn.xml" value="0.1645" />
         <entry key="..\:/SocialMedia/app/src/main/res/drawable/bg_edit_text.xml" value="0.1645" />
         <entry key="..\:/SocialMedia/app/src/main/res/drawable/ic_baseline_https_24.xml" value="0.1645" />
-        <entry key="..\:/SocialMedia/app/src/main/res/drawable/ic_baseline_image_24.xml" value="0.1645" />
         <entry key="..\:/SocialMedia/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1645" />
         <entry key="..\:/SocialMedia/app/src/main/res/drawable/ic_baseline_phone_24.xml" value="0.1645" />
         <entry key="..\:/SocialMedia/app/src/main/res/layout/activity_fonctionnality.xml" value="0.2" />
         <entry key="..\:/SocialMedia/app/src/main/res/layout/activity_login.xml" value="0.1859375" />
         <entry key="..\:/SocialMedia/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/SocialMedia/app/src/main/res/layout/activity_post.xml" value="0.18" />
         <entry key="..\:/SocialMedia/app/src/main/res/layout/activity_sign_up.xml" value="0.1859375" />
-        <entry key="..\:/SocialMedia/app/src/main/res/layout/fragment_home.xml" value="0.2" />
-        <entry key="..\:/SocialMedia/app/src/main/res/layout/fragment_profil.xml" value="0.2" />
-        <entry key="..\:/SocialMedia/app/src/main/res/layout/fragment_setting.xml" value="0.2" />
-        <entry key="..\:/SocialMedia/app/src/main/res/menu/menu_foctionnality.xml" value="0.2" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/SocialMedia/app/src/main/res/drawable/b_fragment_setting.xml" value="0.1225" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/SocialMedia/app/src/main/res/drawable/b_login_field.xml" value="0.156" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/SocialMedia/app/src/main/res/drawable/bg_edit_text.xml" value="0.1" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/SocialMedia/app/src/main/res/drawable/ic_baseline_comment_24.xml" value="0.156" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/SocialMedia/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.156" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/SocialMedia/app/src/main/res/drawable/ic_baseline_share_24.xml" value="0.156" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/SocialMedia/app/src/main/res/layout/activity_fonctionnality.xml" value="0.2765625" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/SocialMedia/app/src/main/res/layout/activity_list_item.xml" value="0.2241452089489236" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/SocialMedia/app/src/main/res/layout/activity_login.xml" value="0.2765625" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/SocialMedia/app/src/main/res/layout/activity_main.xml" value="0.2765625" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/SocialMedia/app/src/main/res/layout/activity_post.xml" value="0.2765625" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/SocialMedia/app/src/main/res/layout/activity_sign_up.xml" value="0.2765625" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/SocialMedia/app/src/main/res/layout/fragment_home.xml" value="0.22702009405728943" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/SocialMedia/app/src/main/res/layout/fragment_profil.xml" value="0.2765625" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/SocialMedia/app/src/main/res/layout/fragment_setting.xml" value="0.2765625" />
+        <entry key="..\:/Users/Sabin ASSOGBA/SocialMedia/app/src/main/res/drawable/b_fragment_setting.xml" value="0.115" />
         <entry key="..\:/Users/Sabin ASSOGBA/SocialMedia/app/src/main/res/drawable/b_login_field.xml" value="0.2125" />
+        <entry key="..\:/Users/Sabin ASSOGBA/SocialMedia/app/src/main/res/drawable/bg_btn.xml" value="0.115" />
+        <entry key="..\:/Users/Sabin ASSOGBA/SocialMedia/app/src/main/res/drawable/ic_baseline_person_pin_24.xml" value="0.115" />
+        <entry key="..\:/Users/Sabin ASSOGBA/SocialMedia/app/src/main/res/drawable/ic_baseline_power_settings_new_24.xml" value="0.115" />
+        <entry key="..\:/Users/Sabin ASSOGBA/SocialMedia/app/src/main/res/drawable/ic_baseline_text_rotate_vertical_24.xml" value="0.115" />
+        <entry key="..\:/Users/Sabin ASSOGBA/SocialMedia/app/src/main/res/drawable/ic_baseline_translate_24.xml" value="0.1" />
         <entry key="..\:/Users/Sabin ASSOGBA/SocialMedia/app/src/main/res/layout/activity_fonctionnality.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Sabin ASSOGBA/SocialMedia/app/src/main/res/layout/activity_list_item.xml" value="0.1" />
         <entry key="..\:/Users/Sabin ASSOGBA/SocialMedia/app/src/main/res/layout/activity_login.xml" value="0.18568840579710144" />
         <entry key="..\:/Users/Sabin ASSOGBA/SocialMedia/app/src/main/res/layout/activity_main.xml" value="0.11503623188405797" />
+        <entry key="..\:/Users/Sabin ASSOGBA/SocialMedia/app/src/main/res/layout/activity_post.xml" value="0.18" />
         <entry key="..\:/Users/Sabin ASSOGBA/SocialMedia/app/src/main/res/layout/fragment_home.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/Sabin ASSOGBA/SocialMedia/app/src/main/res/layout/fragment_profil.xml" value="0.19114583333333332" />
-        <entry key="..\:/Users/Sabin ASSOGBA/SocialMedia/app/src/main/res/layout/fragment_setting.xml" value="0.19114583333333332" />
+        <entry key="..\:/Users/Sabin ASSOGBA/SocialMedia/app/src/main/res/layout/fragment_setting.xml" value="0.18" />
         <entry key="..\:/Users/Sabin ASSOGBA/SocialMedia/app/src/main/res/menu-ldltr/appmenu.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/Sabin ASSOGBA/SocialMedia/app/src/main/res/menu/menu_foctionnality.xml" value="0.20520833333333333" />
       </map>

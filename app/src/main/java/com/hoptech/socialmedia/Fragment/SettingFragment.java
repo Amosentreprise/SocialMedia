@@ -1,10 +1,15 @@
 package com.hoptech.socialmedia.Fragment;
 
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
 import com.hoptech.socialmedia.R;
 
 /**
@@ -19,6 +24,8 @@ public class SettingFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private TextView langue, mode,info,deconnexion;
+    public int OPACITY=0;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -60,5 +67,34 @@ public class SettingFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_setting, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        this.langue = view.findViewById(R.id.langue_text);
+        this.mode = view.findViewById(R.id.mode_text);
+        this.info = view.findViewById(R.id.apropos_text);
+        this.deconnexion= view.findViewById(R.id.deconnexion_text);
+
+        langue.setTranslationX(800);
+        langue.setAlpha(OPACITY);
+
+        mode.setTranslationX(800);
+        mode.setAlpha(OPACITY);
+
+        info.setTranslationX(800);
+        info.setAlpha(OPACITY);
+
+        deconnexion.setTranslationX(800);
+        deconnexion.setAlpha(OPACITY);
+
+
+        langue.animate().translationX(0).alpha(1).setDuration(1000).setStartDelay(100).start();
+        mode.animate().translationX(0).alpha(1).setDuration(1000).setStartDelay(200).start();
+        info.animate().translationX(0).alpha(1).setDuration(1000).setStartDelay(300).start();
+        deconnexion.animate().translationX(0).alpha(1).setDuration(1000).setStartDelay(400).start();
+
+
     }
 }

@@ -2,13 +2,19 @@ package com.hoptech.socialmedia.Fragment;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.hoptech.socialmedia.R;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,6 +27,11 @@ public class ProfilFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    private CircleImageView profile_image;
+    private TextView nom_profile, prenom_profile,tel_profile;
+    private Button bouton_profile;
+    public int OPACITY=0;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -62,5 +73,37 @@ public class ProfilFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_profil, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        this.profile_image= view.findViewById(R.id.profile_image);
+        this.nom_profile = view.findViewById(R.id.nom_profile);
+        this.prenom_profile = view.findViewById(R.id.prenom_profile);
+        this.tel_profile = view.findViewById(R.id.tel_profile);
+        this.bouton_profile = view.findViewById(R.id.bouton_profile);
+
+        profile_image.setTranslationY(-800);
+        profile_image.setAlpha(OPACITY);
+
+        nom_profile.setTranslationX(800);
+        nom_profile.setAlpha(OPACITY);
+
+        prenom_profile.setTranslationX(800);
+        prenom_profile.setAlpha(OPACITY);
+
+        tel_profile.setTranslationX(800);
+        tel_profile.setAlpha(OPACITY);
+
+        bouton_profile.setTag(800);
+        bouton_profile.setAlpha(OPACITY);
+
+        profile_image.animate().translationY(0).alpha(1).setDuration(2000).setStartDelay(500).start();
+        nom_profile.animate().translationX(0).alpha(1).setDuration(1000).setStartDelay(100).start();
+        prenom_profile.animate().translationX(0).alpha(1).setDuration(1000).setStartDelay(200).start();
+       tel_profile.animate().translationX(0).alpha(1).setDuration(1000).setStartDelay(300).start();
+        bouton_profile.animate().translationX(0).alpha(1).setDuration(1000).setStartDelay(400).start();
+
     }
 }
