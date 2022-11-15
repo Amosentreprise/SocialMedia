@@ -18,9 +18,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.media_icon = findViewById(R.id.media_icon);
-
-
-
         media_icon.setTranslationY(-500);
 
         media_icon.animate().translationY(0).alpha(1).setDuration(3000).start();
@@ -36,7 +33,5 @@ public class MainActivity extends AppCompatActivity {
         };
 
         new Handler().postDelayed(runnable, 3000);
-
-
     }
 }

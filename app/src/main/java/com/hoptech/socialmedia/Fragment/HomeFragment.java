@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.widget.ImageViewCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,6 +16,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.hoptech.socialmedia.Activities.FonctionnalityActivity;
@@ -49,6 +52,7 @@ public class HomeFragment extends Fragment {
     private RecyclerView recyclerView;
     private EditText postField;
     private FloatingActionButton btn_post;
+
 
     public HomeFragment() {
         // Required empty public constructor
@@ -88,6 +92,8 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         btn_post = view.findViewById(R.id.fab_post);
         postField = view.findViewById(R.id.post_Edit);
+
+
         btn_post.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

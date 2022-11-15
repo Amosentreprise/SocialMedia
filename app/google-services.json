@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "371829515108",
+    "project_id": "socialmedia-b52ca",
+    "storage_bucket": "socialmedia-b52ca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:371829515108:android:ea61703d29a86de0d95071",
+        "android_client_info": {
+          "package_name": "com.hoptech.socialmedia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "371829515108-e5p508ukf0dar89mqdrb4u50ds1lug14.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqbyuaf5xCesM2Z3wZZ6TAE7rBIkeAgIw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "371829515108-e5p508ukf0dar89mqdrb4u50ds1lug14.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

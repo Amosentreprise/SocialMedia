@@ -53,13 +53,13 @@
         android:inputType="text"/>
 
     <EditText
-        android:id="@+id/phone_Edit"
+        android:id="@+id/email_Edit"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginHorizontal="20dp"
         android:background="@drawable/bg_edit_text"
-        android:drawableStart="@drawable/ic_baseline_phone_24"
-        android:hint="Your phone"
+        android:drawableStart="@drawable/ic_baseline_email_24"
+        android:hint="Your email"
         android:drawablePadding="12dp"
         android:maxLines="1"
         android:paddingHorizontal="30dp"
@@ -68,7 +68,7 @@
         app:layout_constraintTop_toBottomOf="@+id/lastname_Edit"
         android:layout_marginTop="30dp"
         android:textSize="16sp"
-        android:inputType="phone"/>
+        android:inputType="textEmailAddress"/>
 
     <EditText
         android:id="@+id/password_Edit"

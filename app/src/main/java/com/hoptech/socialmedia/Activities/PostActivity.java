@@ -15,6 +15,7 @@ public class PostActivity extends AppCompatActivity {
     private Button postBtn;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
               super.onCreate(savedInstanceState);

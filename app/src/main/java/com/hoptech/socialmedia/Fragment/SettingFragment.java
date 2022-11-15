@@ -1,15 +1,19 @@
 package com.hoptech.socialmedia.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.hoptech.socialmedia.Activities.LoginActivity;
+import com.hoptech.socialmedia.InfoActivity;
 import com.hoptech.socialmedia.R;
 
 /**
@@ -95,6 +99,21 @@ public class SettingFragment extends Fragment {
         info.animate().translationX(0).alpha(1).setDuration(1000).setStartDelay(300).start();
         deconnexion.animate().translationX(0).alpha(1).setDuration(1000).setStartDelay(400).start();
 
+        deconnexion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(view.getContext(), LoginActivity.class);
+                startActivity(intent);
+
+            }
+        });
+     info.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View view) {
+             Intent intent = new Intent(view.getContext(),InfoActivity.class);
+             startActivity(intent);
+         }
+     });
 
     }
 }
