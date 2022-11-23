@@ -1,9 +1,11 @@
 package com.hoptech.socialmedia.Activities;
 
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,26 +13,26 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.hoptech.socialmedia.ForgetPassordActivity;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.hoptech.socialmedia.Dialogs.NoLoginDialog;
 import com.hoptech.socialmedia.Models.SqliteDataBase;
 import com.hoptech.socialmedia.R;
 
 public class LoginActivity extends AppCompatActivity {
     SqliteDataBase myDb;
     private Button SignupButton, btn_Login;
-    private EditText email_Login, password_Login;
+    private EditText phone_Login, password_Login;
     private TextView forgetPassword, text_or;
     private ProgressBar progressBar_login;
     private  int OPACITY = 0;
     private ImageView logo_Login;
-    private FirebaseAuth mAuth;
+    DatabaseReference databasereference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://socialmedia-5077d-default-rtdb.firebaseio.com/");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +40,8 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
 
-// ...
-// Initialize Firebase Auth
-        mAuth = FirebaseAuth.getInstance();
         this.SignupButton= findViewById(R.id.sign_up_btn_login);
-        this.email_Login = findViewById(R.id.email_Login);
+        this.phone_Login = findViewById(R.id.phone_Login);
         this.password_Login = findViewById(R.id.password_Login);
         this.forgetPassword = findViewById(R.id.forgetPassword);
         this.text_or = findViewById(R.id.or);
@@ -51,12 +50,12 @@ public class LoginActivity extends AppCompatActivity {
         this.progressBar_login = findViewById(R.id.progressBar_login);
        progressBar_login.setVisibility(View.INVISIBLE);
 
-        myDb = new SqliteDataBase(this);
+
         SignupButton.setTranslationX(800);
         SignupButton.setAlpha(OPACITY);
 
-        email_Login.setTranslationX(800);
-        email_Login.setAlpha(OPACITY);
+        phone_Login.setTranslationX(800);
+        phone_Login.setAlpha(OPACITY);
 
         password_Login.setTranslationX(800);
         password_Login.setAlpha(OPACITY);
@@ -74,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
         forgetPassword.setAlpha(OPACITY);
 
         SignupButton.animate().translationX(0).alpha(1).setDuration(1000).setStartDelay(700).start();
-        email_Login.animate().translationX(0).alpha(1).setDuration(1000).setStartDelay(200).start();
+        phone_Login.animate().translationX(0).alpha(1).setDuration(1000).setStartDelay(200).start();
         password_Login.animate().translationX(0).alpha(1).setDuration(1000).setStartDelay(300).start();
         btn_Login.animate().translationX(0).alpha(1).setDuration(1000).setStartDelay(500).start();
         logo_Login.animate().translationY(0).alpha(1).setDuration(2000).setStartDelay(100).start();
@@ -108,39 +107,62 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(validatePhone()&& validatepassword()){
-                    String email= email_Login.getEditableText().toString();
-                    String password = password_Login.getEditableText().toString();
-
-                    mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    final String phone = phone_Login.getText().toString();
+                    final String password = password_Login.getText().toString();
+                    databasereference.child("Users").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if(task.isSuccessful()){
-                                Intent directionFonctionnality = new Intent(getApplicationContext(),FonctionnalityActivity.class );
-                                startActivity(directionFonctionnality);
-                                progressBar_login.setVisibility(View.VISIBLE);
-                                finish();
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            //verification dans firebase si phone number exist
+                            if(snapshot.hasChild(phone)){
+                                //si oui
+                                //comparons le mot pass entré avec celui qui est dans la database
+                                final String getPassword = snapshot.child(phone).child("Password").getValue(String.class);
+                                if(getPassword.equals(password)){
+                                    progressBar_login.setVisibility(View.VISIBLE);
+                                    Intent directionFonctionnality = new Intent(getApplicationContext(),FonctionnalityActivity.class );
+                                    startActivity(directionFonctionnality);
+
+                                    finish();
+                                }else{
+                                    NoLoginDialog nologinDialog = new NoLoginDialog(LoginActivity.this);
+                                    nologinDialog.setCancelable(false);
+                                    nologinDialog.show();
+
+                                }
                             }else{
-                                Toast.makeText(LoginActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                                NoLoginDialog nologinDialog = new NoLoginDialog(LoginActivity.this);
+                                nologinDialog.setCancelable(false);
+                                nologinDialog.show();
 
                             }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
                         }
                     });
 
 
 
-
                 }else{
+
+                    NoLoginDialog nologinDialog = new NoLoginDialog(LoginActivity.this);
+                    nologinDialog.setCancelable(false);
+                    nologinDialog.show();
 
                 }
 
             }
         });
     }
-    private Boolean validatePhone(){
-          String email= email_Login.getEditableText().toString();
 
-          if (email.isEmpty()){
-              email_Login.setError("Phone number can't be empty");
+    //validation du formulaire
+    private Boolean validatePhone(){
+          String phone= phone_Login.getEditableText().toString();
+
+          if (phone.isEmpty()){
+              phone_Login.setError("Phone number can't be empty");
               return false;
           }
           else {

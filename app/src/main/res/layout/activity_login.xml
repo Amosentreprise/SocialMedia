@@ -19,18 +19,18 @@
            android:layout_marginTop="80dp"
            android:background="@drawable/media" />
        <EditText
-           android:id="@+id/email_Login"
+           android:id="@+id/phone_Login"
            android:layout_width="match_parent"
            android:layout_height="50dp"
            android:layout_marginTop="40dp"
            android:background="@drawable/b_login_field"
            android:layout_marginHorizontal="20dp"
-           android:hint="Your email"
+           android:hint="Your Phone number"
            android:drawablePadding="12dp"
            android:textSize="16sp"
            android:paddingHorizontal="30dp"
-           android:drawableStart="@drawable/ic_baseline_email_24"
-           android:inputType="textEmailAddress"/>
+           android:drawableStart="@drawable/ic_baseline_phone_24"
+           android:inputType="phone"/>
 
        <EditText
            android:id="@+id/password_Login"

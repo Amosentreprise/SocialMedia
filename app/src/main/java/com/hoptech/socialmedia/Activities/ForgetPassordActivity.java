@@ -1,8 +1,10 @@
-package com.hoptech.socialmedia;
+package com.hoptech.socialmedia.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.hoptech.socialmedia.R;
 
 public class ForgetPassordActivity extends AppCompatActivity {
 

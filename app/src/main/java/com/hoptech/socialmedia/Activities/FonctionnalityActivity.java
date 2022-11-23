@@ -30,15 +30,15 @@ public class FonctionnalityActivity extends AppCompatActivity {
                 case R.id.home:
                     replaceFragment(new HomeFragment());
                     break;
-                case R.id.discussion:
+               /* case R.id.discussion:
                     replaceFragment(new ChatFragment());
-                    break;
+                    break;*/
                 case R.id.profile:
                     replaceFragment(new ProfilFragment());
                     break;
-                case R.id.notify:
+               /* case R.id.notify:
                     replaceFragment(new NotificationFragment());
-                    break;
+                    break;*/
                 case R.id.setting:
                     replaceFragment(new SettingFragment());
                     break;

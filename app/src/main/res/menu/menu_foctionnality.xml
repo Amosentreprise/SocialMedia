@@ -4,25 +4,30 @@
     <item android:id="@+id/home"
         android:title="Home"
         android:icon="@drawable/ic_baseline_home_24"
-        />
 
+        />
+    <!--
     <item
         android:title="Chat"
         android:id="@+id/discussion"
         android:icon="@drawable/ic_baseline_people_outline_24"
 
-        /><item
+
+        />
+        -->
+        <item
         android:icon="@drawable/ic_baseline_person_24"
         android:id="@+id/profile"
         android:title="Profile"
         />
-
+    <!--
     <item
         android:title="Notifications"
         android:id="@+id/notify"
         android:icon="@drawable/ic_baseline_notifications_24"
 
         />
+         -->
     <item
         android:title="Settings"
         android:id="@+id/setting"

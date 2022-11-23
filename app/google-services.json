@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "371829515108",
-    "project_id": "socialmedia-b52ca",
-    "storage_bucket": "socialmedia-b52ca.appspot.com"
+    "project_number": "640181582216",
+    "project_id": "socialmedia-5077d",
+    "storage_bucket": "socialmedia-5077d.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:371829515108:android:ea61703d29a86de0d95071",
+        "mobilesdk_app_id": "1:640181582216:android:70adec02dbece19887a23d",
         "android_client_info": {
           "package_name": "com.hoptech.socialmedia"
         }
       },
       "oauth_client": [
         {
-          "client_id": "371829515108-e5p508ukf0dar89mqdrb4u50ds1lug14.apps.googleusercontent.com",
+          "client_id": "640181582216-eofqgiq6nlj6up262654jbt39c9193ku.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBqbyuaf5xCesM2Z3wZZ6TAE7rBIkeAgIw"
+          "current_key": "AIzaSyAEN8dKrw-fWYB8G-fyaPog6aR3MTfeL9Y"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "371829515108-e5p508ukf0dar89mqdrb4u50ds1lug14.apps.googleusercontent.com",
+              "client_id": "640181582216-eofqgiq6nlj6up262654jbt39c9193ku.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

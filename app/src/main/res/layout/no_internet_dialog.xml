@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/no_internet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/logo_Login"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/cancel" />
+    <ImageView
+        android:layout_width="400dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/internet" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:text="Vous n'êtes pas connecté pas à internet"
+        android:gravity="center"
+        android:textSize="20sp"
+        />
+    <Button
+        android:id="@+id/retry_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20sp"
+        android:layout_marginEnd="20sp"
+        android:background="@drawable/b_login_field"
+        android:text="Réessayer..."
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        />
+
+</LinearLayout>

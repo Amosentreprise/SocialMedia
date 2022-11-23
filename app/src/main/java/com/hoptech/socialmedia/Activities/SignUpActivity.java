@@ -1,5 +1,6 @@
 package com.hoptech.socialmedia.Activities;
 
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,36 +11,30 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.hoptech.socialmedia.Models.SqliteDataBase;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.hoptech.socialmedia.R;
 
 public class SignUpActivity extends AppCompatActivity {
-      SqliteDataBase myDb;
+
      private Button SignupButtonlogin;
-     private EditText firstname_Edit, lastname_Edit, email_Edit, password_Edit;
+     private EditText firstname_Edit, lastname_Edit, phone_Edit, password_Edit;
      private final int OPACITY = 0;
-    private FirebaseAuth mAuth;
+     //creation d'un objet database pour acceder à firebase realtime database
+    DatabaseReference databasereference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://socialmedia-5077d-default-rtdb.firebaseio.com/");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        //initialize
-        mAuth = FirebaseAuth.getInstance();
-
-
         this.SignupButtonlogin = findViewById(R.id.sign_up_btn);
         this.firstname_Edit = findViewById(R.id.firstname_Edit);
         this.lastname_Edit = findViewById(R.id.lastname_Edit);
-        this.email_Edit = findViewById(R.id.email_Edit);
+        this.phone_Edit = findViewById(R.id.phone_Edit);
         this.password_Edit = findViewById(R.id.password_Edit);
-        //connexion  avec la base de données
-        myDb = new SqliteDataBase(this);
         //annimation
         firstname_Edit.setTranslationX(800);
         firstname_Edit.setAlpha(OPACITY);
@@ -47,8 +42,8 @@ public class SignUpActivity extends AppCompatActivity {
         lastname_Edit.setTranslationX(800);
         lastname_Edit.setAlpha(OPACITY);
 
-       email_Edit.setTranslationX(800);
-        email_Edit.setAlpha(OPACITY);
+        phone_Edit.setTranslationX(800);
+        phone_Edit.setAlpha(OPACITY);
 
        password_Edit.setTranslationX(800);
         password_Edit.setAlpha(OPACITY);
@@ -59,36 +54,44 @@ public class SignUpActivity extends AppCompatActivity {
 
         firstname_Edit.animate().translationX(0).alpha(1).setDuration(1000).setStartDelay(100).start();
         lastname_Edit.animate().translationX(0).alpha(1).setDuration(1000).setStartDelay(200).start();
-        email_Edit.animate().translationX(0).alpha(1).setDuration(1000).setStartDelay(300).start();
+        phone_Edit.animate().translationX(0).alpha(1).setDuration(1000).setStartDelay(300).start();
         password_Edit.animate().translationX(0).alpha(1).setDuration(1000).setStartDelay(400).start();
         SignupButtonlogin.animate().translationX(0).alpha(1).setDuration(1000).setStartDelay(500).start();
 
         SignupButtonlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //onBackPressed();
                 if(validate()){
-                    String email = email_Edit.getText().toString().trim();
-                    String password = password_Edit.getText().toString().trim();
+                    String firstname = firstname_Edit.getText().toString();
+                    String lastname = lastname_Edit.getText().toString();
+                    String phone = phone_Edit.getText().toString();
+                    String password= password_Edit.getText().toString();
+                    databasereference.child("Users").addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            //verifier si phone est déja enregistré une fois
+                            if(snapshot.hasChild(phone)){
+                                Toast.makeText(SignUpActivity.this, "Phone already register", Toast.LENGTH_SHORT).show();
+                            }else{
+                                //envoie des données
+                                //j'ai pris le id comme identifiant unique
+                                databasereference.child("Users").child(phone).child("Firstname").setValue(firstname);
+                                databasereference.child("Users").child(phone).child("Lastname").setValue(lastname);
+                                databasereference.child("Users").child(phone).child("Password").setValue(password);
+                                Toast.makeText(SignUpActivity.this, "User Register succesfully", Toast.LENGTH_SHORT).show();
+                                Intent loginActivity = new Intent(getApplicationContext(), LoginActivity.class);
+                                startActivity(loginActivity);
+                                finish();
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
 
 
-                    mAuth.createUserWithEmailAndPassword(email, password)
-                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    if (task.isSuccessful()) {
-                                        Intent loginActivity = new Intent(getApplicationContext(), LoginActivity.class);
-                                        startActivity(loginActivity);
-                                        finish();
-
-                                    } else {
-
-                                        Toast.makeText(SignUpActivity.this, "Authentication failed.",
-                                                Toast.LENGTH_SHORT).show();
-
-                                    }
-                                }
-                            });
                 }
 
 
@@ -126,10 +129,10 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     private boolean validatePhone(){
-        String value = email_Edit.getText().toString().trim();
+        String value = phone_Edit.getText().toString().trim();
 
         if(value.isEmpty()){
-            email_Edit.setError("email field is empty");
+            phone_Edit.setError("phone field is empty");
             return false;
         }else {
             return true;

@@ -20,6 +20,11 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.hoptech.socialmedia.Activities.FonctionnalityActivity;
 import com.hoptech.socialmedia.Activities.PostActivity;
 import com.hoptech.socialmedia.ListItem;
@@ -52,6 +57,8 @@ public class HomeFragment extends Fragment {
     private RecyclerView recyclerView;
     private EditText postField;
     private FloatingActionButton btn_post;
+    private final DatabaseReference DatabaseReference = FirebaseDatabase.getInstance().getReference();
+
 
 
     public HomeFragment() {
@@ -143,13 +150,38 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         dataInitialize();
+
+//        DatabaseReference.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                for(DataSnapshot post : snapshot.child("Post").getChildren()){
+//
+//                    ListItem listItem = new ListItem();
+//
+//                    listItems.add(listItem);
+//
+//                }
+//
+//                MyAdapter myAdapter = new MyAdapter(listItems, getContext());
+//                recyclerView.setAdapter(myAdapter);
+//                myAdapter.notifyDataSetChanged();
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
+        MyAdapter myAdapter = new MyAdapter(listItems, getContext());
+        recyclerView.setAdapter(myAdapter);
+        myAdapter.notifyDataSetChanged();
+
+
         recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setHasFixedSize(true);
 
-        MyAdapter myAdapter = new MyAdapter(listItems, getContext());
-        recyclerView.setAdapter(myAdapter);
-        myAdapter.notifyDataSetChanged();
+
 
 
     }

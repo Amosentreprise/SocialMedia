@@ -7,13 +7,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.hoptech.socialmedia.Activities.LoginActivity;
-import com.hoptech.socialmedia.InfoActivity;
+import com.hoptech.socialmedia.Activities.InfoActivity;
 import com.hoptech.socialmedia.R;
 
 /**

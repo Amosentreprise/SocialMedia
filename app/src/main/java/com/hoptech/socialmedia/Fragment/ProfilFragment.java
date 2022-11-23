@@ -9,33 +9,21 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import android.preference.PreferenceManager;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ProgressBar;
+
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.StorageTask;
-import com.google.firebase.storage.UploadTask;
-import com.hoptech.socialmedia.Activities.FonctionnalityActivity;
-import com.hoptech.socialmedia.MainActivity;
+import com.google.firebase.database.ValueEventListener;
 import com.hoptech.socialmedia.R;
-
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-
 import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
@@ -54,12 +42,7 @@ public class ProfilFragment extends Fragment {
     private TextView nom_profile, prenom_profile,tel_profile;
     private Button bouton_profile;
     public int OPACITY=0;
-    Uri imageUri;
-    StorageReference mStorageReference;
-    StorageTask mStorageTask;
-
-    DatabaseReference mDatabaseReference;
-    ProgressDialog mProgressDialog;
+    DatabaseReference databasereference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://socialmedia-5077d-default-rtdb.firebaseio.com/");
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -67,7 +50,7 @@ public class ProfilFragment extends Fragment {
     private int mRequestCode;
     private int mResultCode;
 
-    FirebaseAuth mAuth;
+
 
     public ProfilFragment() {
         // Required empty public constructor
@@ -131,7 +114,7 @@ public class ProfilFragment extends Fragment {
         tel_profile.setTranslationX(800);
         tel_profile.setAlpha(OPACITY);
 
-        bouton_profile.setTag(800);
+        bouton_profile.setTranslationX(800);
         bouton_profile.setAlpha(OPACITY);
 
         profile_image.animate().translationY(0).alpha(1).setDuration(2000).setStartDelay(500).start();
@@ -140,15 +123,19 @@ public class ProfilFragment extends Fragment {
        tel_profile.animate().translationX(0).alpha(1).setDuration(1000).setStartDelay(300).start();
         bouton_profile.animate().translationX(0).alpha(1).setDuration(1000).setStartDelay(400).start();
 
-        mAuth  = FirebaseAuth.getInstance();
-        mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("User");
-        mStorageReference = FirebaseStorage.getInstance().getReference().child("Profile Pic");
+        databasereference.child("Users").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                nom_profile.setText(snapshot.child("Fistname").getValue(String.class));
+                prenom_profile.setText(snapshot.child("Laststname").getValue(String.class));
 
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
-
-
-
+            }
+        });
 
     }
 
