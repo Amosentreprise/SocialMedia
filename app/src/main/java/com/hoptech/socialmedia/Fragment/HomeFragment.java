@@ -172,14 +172,17 @@ public class HomeFragment extends Fragment {
 //
 //            }
 //        });
-        MyAdapter myAdapter = new MyAdapter(listItems, getContext());
-        recyclerView.setAdapter(myAdapter);
-        myAdapter.notifyDataSetChanged();
+
+
 
 
         recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setHasFixedSize(true);
+
+        MyAdapter myAdapter = new MyAdapter(listItems, getContext());
+        recyclerView.setAdapter(myAdapter);
+        myAdapter.notifyDataSetChanged();
 
 
 

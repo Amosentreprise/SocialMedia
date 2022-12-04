@@ -23,7 +23,11 @@ import com.google.firebase.database.DatabaseReference;
 
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
 import com.hoptech.socialmedia.R;
+
+import java.net.URI;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
@@ -43,7 +47,10 @@ public class ProfilFragment extends Fragment {
     private Button bouton_profile;
     public int OPACITY=0;
     DatabaseReference databasereference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://socialmedia-5077d-default-rtdb.firebaseio.com/");
-
+    //private URI imageUri;
+    //private String myUri = "";
+    //private StorageTask uploadTask;
+    //private StorageReference StorageProfilePics;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -126,8 +133,8 @@ public class ProfilFragment extends Fragment {
         databasereference.child("Users").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                nom_profile.setText(snapshot.child("Fistname").getValue(String.class));
-                prenom_profile.setText(snapshot.child("Laststname").getValue(String.class));
+                nom_profile.setText(snapshot.child("Users").child("Fistname").getValue(String.class));
+                prenom_profile.setText(snapshot.child("Users").child("Laststname").getValue(String.class));
 
             }
 
